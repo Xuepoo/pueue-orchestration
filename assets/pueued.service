@@ -1,0 +1,11 @@
+[Unit]
+Description=Pueue daemon - task queue for the command line
+Documentation=https://github.com/Nukesor/pueue
+
+[Service]
+ExecStart=%h/.local/share/cargo/bin/pueued
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
