@@ -8,7 +8,26 @@ Pairs naturally with [CarryCtx](https://github.com/) (shared context/state +
 git worktree isolation): carryctx decides *what* agents share, pueue decides
 *when and where* commands run.
 
-## Install (this machine)
+## Install
+
+### One command, all agents ([skills CLI](https://github.com/vercel-labs/skills))
+
+```sh
+npx skills add Xuepoo/pueue-orchestration -g
+# or target specific agents:
+npx skills add Xuepoo/pueue-orchestration -g -a claude-code -a opencode -a codex -a gemini-cli
+```
+
+The repo root `SKILL.md` is discovered automatically; scripts and assets ship with it.
+
+### Manual
+
+```sh
+git clone https://github.com/Xuepoo/pueue-orchestration
+cp pueue-orchestration/SKILL.md ~/.claude/skills/pueue-orchestration/   # repeat per agent
+```
+
+### Daemon (this machine)
 
 ```sh
 systemctl --user daemon-reload
